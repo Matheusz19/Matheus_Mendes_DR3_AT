@@ -1,3 +1,4 @@
+# Missão 1
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -137,14 +138,14 @@ spec:
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://ufodb-service:5432/ufology"
-            - name: SPRING_DATASOURCE_USERNAME
+            - name: POSTGRES_USERNAME
               value: "postgres"
-            - name: SPRING_DATASOURCE_PASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-secret
                   key: DB_PASSWORD
-            - name: SPRING_REDIS_HOST
+            - name: SPRING_DATA_REDIS_HOST
               valueFrom:
                 configMapKeyRef:
                   name: app-config
